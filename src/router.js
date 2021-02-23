@@ -23,5 +23,5 @@ export default new router({
       path: '/',
       redirect: '/posts',
     }
-  ]
+  ],
 });

@@ -2,13 +2,13 @@
 
   <router-link
     class="router-link"
-    :to="{ name: 'CurrentPost', params: {id: post.id} }"
+    :to="{ name: 'CurrentPost', params: {id: post.id, userId: post.userId} }"
   >
 
     <li class="post">
       <h2 class="post-title">{{ post.title }}</h2>
       <p class="post-body">{{ post.body }}</p>
-      <p>@user: {{ post.userId }}</p>
+      <p>@user: {{ user.name }}</p>
     </li>
 
   </router-link>
@@ -18,7 +18,19 @@
 <script>
   export default {
     props: ['post'],
-}
+
+    data() {
+      return {
+        user: {},
+      };
+    },
+
+    mounted() {
+      fetch(`https://jsonplaceholder.typicode.com/users/${this.post.userId}`)
+        .then(response => response.json())
+          .then(person => {this.user = person})
+    },
+  }
 </script>
 
 <style>
