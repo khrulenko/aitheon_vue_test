@@ -1,28 +1,46 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1 class="title">posts</h1>
+    <hr>
+    <PostList
+      v-bind:posts="posts"
+    />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  import PostList from '@/components/PostList';
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  export default {
+    name: 'app',
+
+    data() {
+      return {
+        posts: [],
+      };
+    },
+
+    components: {
+      PostList,
+    },
+
+    mounted() {
+      fetch('https://jsonplaceholder.typicode.com/posts')
+        .then(response => response.json())
+          .then(posts => { this.posts = posts })
+    },
+
+    methods: {
+      logSomething() {
+        console.log('myWeirdTEXT');
+      }
+    }
   }
-}
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  .title {
+    text-align: center;
+    text-transform: uppercase;
+  }
 </style>
