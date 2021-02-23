@@ -8,6 +8,7 @@ Vue.use(router);
 
 export default new router({
   mode: 'history',
+  base: '/aitheon_vue_test/',
   routes: [
     {
       path: '/posts',
