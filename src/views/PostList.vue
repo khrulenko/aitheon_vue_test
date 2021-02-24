@@ -46,6 +46,8 @@
     display: flex;
     flex-wrap: wrap;
 
+    padding: 10px;
+
     justify-content: center;
   }
 </style>

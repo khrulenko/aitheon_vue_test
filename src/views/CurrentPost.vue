@@ -98,23 +98,24 @@
 
     width: 20%;
     max-width: 100px;
+    min-width: 50px;
 
     text-decoration: none;
     text-align: center;
     color: black;
 
-    background: linear-gradient(270deg, transparent, #d80e30b4);
+    background: linear-gradient(270deg, transparent, #d80e3094);
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
   }
 
   .post-details {
-    margin-left: -20px;
     padding-left: 40px;
 
-    background: linear-gradient(45deg, transparent, #6ccfcf60);
+    background: linear-gradient(90deg, transparent, #6ccfcf60);
 
-    border-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
   }
 
   .details-title {
