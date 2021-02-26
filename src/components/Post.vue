@@ -35,7 +35,6 @@
 
 <style>
   .post {
-    margin: 20px;
     padding: 10px;
 
     max-width: 400px;
@@ -59,6 +58,8 @@
   }
 
   .router-link {
+    margin: 20px;
+
     text-decoration: none;
     color: black;
   }
