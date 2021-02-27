@@ -57,7 +57,7 @@
       };
     },
 
-    mounted() {
+    created() {
       fetch(`https://jsonplaceholder.typicode.com/posts/${this.id}`)
         .then(response => {
           if (!response.ok) {

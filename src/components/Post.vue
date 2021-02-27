@@ -2,7 +2,13 @@
 
   <router-link
     class="router-link"
-    :to="{ name: 'CurrentPost', params: {id: post.id, userId: post.userId} }"
+    :to="{
+      name: 'CurrentPost',
+      params: {
+        id: post.id,
+        userId: post.userId,
+      },
+    }"
   >
 
     <li class="post">
@@ -25,7 +31,7 @@
       };
     },
 
-    mounted() {
+    created() {
       fetch(`https://jsonplaceholder.typicode.com/users/${this.post.userId}`)
         .then(response => response.json())
           .then(person => {this.user = person})

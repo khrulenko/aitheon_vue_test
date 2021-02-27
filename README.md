@@ -4,6 +4,8 @@
 ## Description
 List of posts that are fetched from server.
 The app feches posts from server and renders a list of them. Also there is an ability to click on a post and open it's details. There is a back button in opened post details.
+Show more and Show less buttons load more posts or hide posts and display "load..." if loading is long.
+There is a mobile adaptation of the App.
 
 ## Used technologies
 - Vue.js;
