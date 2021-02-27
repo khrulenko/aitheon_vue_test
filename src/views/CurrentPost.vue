@@ -57,21 +57,30 @@
       };
     },
 
-    created() {
-      fetch(`https://jsonplaceholder.typicode.com/posts/${this.id}`)
-        .then(response => {
-          if (!response.ok) {
-            this.error = true;
-            return;
-          }
+    activated() {
+      this.loadPost(this.id);
+      this.loadUser(this.userId);
+    },
 
-          return response.json();
-        })
-        .then(post => {this.postToShow = post});
+    methods: {
+      loadPost(postId) {
+        fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
+          .then(response => {
+            if (!response.ok) {
+              this.error = true;
+              return;
+            }
 
-      fetch(`https://jsonplaceholder.typicode.com/users/${this.userId}`)
-        .then(response => response.json())
-          .then(person => {this.user = person})
+            return response.json();
+          })
+          .then(post => {this.postToShow = post});
+      },
+
+      loadUser(userId) {
+        fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
+          .then(response => response.json())
+            .then(person => {this.user = person});
+      }
     },
   };
 </script>
