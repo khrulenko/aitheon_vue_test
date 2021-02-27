@@ -56,6 +56,16 @@
 
     created() {
       this.loadPosts(this.amountToShow);
+      sessionStorage.setItem('scrollYPosition', 0);
+    },
+
+    activated() {
+      window.addEventListener('scroll', this.scrollWatch);
+      window.scrollTo(0, +sessionStorage.getItem('scrollYPosition'));
+    },
+
+    deactivated() {
+      window.removeEventListener('scroll', this.scrollWatch);
     },
 
     methods: {
@@ -80,6 +90,10 @@
         this.amountToShow -= 5;
         this.loadPosts(this.amountToShow);
       },
+
+      scrollWatch() {
+        sessionStorage.setItem('scrollYPosition', window.pageYOffset);
+      }
     },
   }
 </script>
