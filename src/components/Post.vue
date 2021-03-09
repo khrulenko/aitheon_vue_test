@@ -1,23 +1,25 @@
 <template>
 
-  <router-link
-    class="router-link"
-    :to="{
-      name: 'CurrentPost',
-      params: {
-        id: post.id,
-        userId: post.userId,
-      },
-    }"
-  >
-
     <li class="post">
-      <h2 class="post-title">{{ post.title }}</h2>
-      <p class="post-body">{{ post.body }}</p>
-      <p>@user: {{ user.name }}</p>
-    </li>
 
-  </router-link>
+      <router-link
+        class="router-link"
+        :to="{
+          name: 'CurrentPost',
+          params: {
+            id: post.id,
+            userId: post.userId,
+          },
+        }"
+      >
+
+        <h2 class="post-title">{{ post.title }}</h2>
+        <p class="post-body">{{ post.body }}</p>
+        <p>@user: {{ user.name }}</p>
+
+      </router-link>
+
+    </li>
 
 </template>
 
@@ -42,6 +44,7 @@
 <style>
   .post {
     padding: 10px;
+    margin: 20px;
 
     max-width: 400px;
 
@@ -49,7 +52,6 @@
     background: linear-gradient(90deg, #d80e3067, #35c2c2a2);
 
     list-style: none;
-    cursor: pointer;
   }
 
   .post-title {
@@ -64,7 +66,9 @@
   }
 
   .router-link {
-    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     text-decoration: none;
     color: black;

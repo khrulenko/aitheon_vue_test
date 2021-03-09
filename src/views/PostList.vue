@@ -132,6 +132,7 @@
 
   .post-list {
     display: flex;
+    align-items: flex-start;
     flex-wrap: wrap;
 
     padding: 10px;

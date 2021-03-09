@@ -7,7 +7,7 @@ import CurrentPost from '@/views/CurrentPost';
 Vue.use(router);
 
 export default new router({
-  mode: 'history',
+  mode: 'hash',
   base: '/aitheon_vue_test/',
   routes: [
     {
