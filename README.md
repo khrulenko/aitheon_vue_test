@@ -1,5 +1,5 @@
 # aitheon_vue_test
-
+[LINK to app preview](https://khrulenko.github.io/aitheon_vue_test/)
 ## Project setup
 ```
 npm install
